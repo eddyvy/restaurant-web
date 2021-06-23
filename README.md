@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Restaurant App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App for constructing a web for a restaurant done with React.
+This repository consist of the frontend part of the project.
 
-## Available Scripts
+***Project date: June 2021***
 
-In the project directory, you can run:
+## Commands
 
-### `yarn start`
+Install dependencies
+```
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Start in developement mode
+```
+npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Build for production
+```
+npm run build
+```
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies
 
-### `yarn build`
+- [Create react app dependencies](https://create-react-app.dev/docs/getting-started)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React router dom](https://reactrouter.com/web/guides/quick-start)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Sass](https://www.npmjs.com/package/sass)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Routes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Public routes**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`/` -> HOME
+`/menu` -> MENU
+`/booking` -> BOOKING
+`/order` -> ORDER
+`/about` -> ABOUT
+`/contact` -> CONTACT
+`/auth` -> LOGIN
+`/not-found` -> ERROR 404
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Private routes**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`/admin` -> AGENDA
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Code explanation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Logic at the header**
 
-### Code Splitting
+´´´javascript
+    const location = useLocation()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    useEffect(() => {
 
-### Analyzing the Bundle Size
+        const path = (location.pathname === routes.home) ? routes.slash : location.pathname
+        
+        const navLinkSelected = document.getElementById( path )
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+        if (!navLinkSelected) {
+            return
+        }
 
-### Making a Progressive Web App
+        navLinkSelected.className = 'header__navlink header__navlink-selected'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+        return () => {
+            navLinkSelected.className = 'header__navlink'
+        }
 
-### Advanced Configuration
+    }, [location])
+´´´
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This code is for setting the class `.header__navlink-selected` and display it once we are at the correct page.
+For this is used the hooks `useEffect` and `useLocation` of react and react-router-dom.
+With useLocation the path of the page is gotten (and including condition to equal '/home' and '/') and then use it to get the navlink element.
+Every navlink has the path as id.
+If the path is not coincident with any navlink it just returns nothing.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { RestaurantApp } from './RestaurantApp';
 
+import './styles/styles.scss'
+
 
 ReactDOM.render(
   <RestaurantApp />,

@@ -1,0 +1,16 @@
+// user-agent values
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline-offset: 0;
+    outline: none;
+}
+
+a:active {
+    color: inherit;
+}

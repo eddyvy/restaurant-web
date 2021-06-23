@@ -1,0 +1,30 @@
+.header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.header__logo {
+    filter: $filter6;
+    margin: 10px;
+    padding: 10px;
+    width: 70px;
+}
+
+.header__navlink {
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+
+    transition: .3s ease;
+
+    &:hover {
+        color: $color3;
+    }
+}
+
+.header__navlink-selected {
+    color: $color3;
+}
