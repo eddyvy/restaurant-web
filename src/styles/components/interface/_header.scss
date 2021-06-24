@@ -6,6 +6,14 @@
     padding: 10px;
 }
 
+.header__arrowDisplay {
+    display: none;
+    filter: $filter3;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    width: 30px;
+}
+
 .header__logo {
     filter: $filter6;
     margin: 10px;
@@ -27,4 +35,24 @@
 
 .header__navlink-selected {
     color: $color3;
+}
+
+// Responsive
+
+@media ( max-width: 750px ) {
+    .header {
+       flex-direction: column; 
+    }
+    .header__logo {
+        order: -1;
+    }
+    .header__navlink {
+        display: none;
+    }
+    .header__arrowDisplay {
+        display: block;
+    }
+    .header__arrowDisplay-clicked {
+        transform: rotate(180deg);
+    }
 }

@@ -31,6 +31,8 @@ npm run build
 
 - [Sass](https://www.npmjs.com/package/sass)
 
+- [Animate.css](https://animate.style/) - CDN imported in `./public/index.html`
+
 
 ## Routes
 
@@ -74,6 +76,21 @@ npm run build
         }
 
     }, [location])
+
+
+    const toggleLinks = (e) => {
+        const navLinks = [ ...document.getElementsByClassName('header__navlink') ]
+        
+        if ( e.target.className !== 'header__arrowDisplay' ) {
+            e.target.className = 'header__arrowDisplay'
+            navLinks.map( navLink => navLink.style.display = 'none')
+        } else {
+            e.target.className += ' header__arrowDisplay-clicked'
+            navLinks.map( navLink => navLink.style.display = 'block')
+        }
+    }
+    
+
 ´´´
 
 This code is for setting the class `.header__navlink-selected` and display it once we are at the correct page.
@@ -81,4 +98,4 @@ For this is used the hooks `useEffect` and `useLocation` of react and react-rout
 With useLocation the path of the page is gotten (and including condition to equal '/home' and '/') and then use it to get the navlink element.
 Every navlink has the path as id.
 If the path is not coincident with any navlink it just returns nothing.
-
+`toggleLinks` displays the navbar and hides it when it is in mobile view.
