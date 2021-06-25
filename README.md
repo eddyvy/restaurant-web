@@ -43,12 +43,19 @@ npm run build
 **Public routes**
 
 `/` -> HOME
+
 `/menu` -> MENU
+
 `/booking` -> BOOKING
+
 `/order` -> ORDER
+
 `/about` -> ABOUT
+
 `/contact` -> CONTACT
+
 `/auth` -> LOGIN
+
 `/not-found` -> ERROR 404
 
 **Private routes**
@@ -60,42 +67,42 @@ npm run build
 
 **Logic at Header.js**
 
-´´´javascript
-    const location = useLocation()
-
-    useEffect(() => {
-
-        const path = (location.pathname === routes.home) ? routes.slash : location.pathname
-        
-        const navLinkSelected = document.getElementById( path )
-
-        if (!navLinkSelected) {
-            return
-        }
-
-        navLinkSelected.className = 'header__navlink header__navlink-selected'
-
-        return () => {
-            navLinkSelected.className = 'header__navlink'
-        }
-
-    }, [location])
-
-
-    const toggleLinks = (e) => {
-        const navLinks = [ ...document.getElementsByClassName('header__navlink') ]
-        
-        if ( e.target.className !== 'header__arrowDisplay' ) {
-            e.target.className = 'header__arrowDisplay'
-            navLinks.map( navLink => navLink.style.display = 'none')
-        } else {
-            e.target.className += ' header__arrowDisplay-clicked'
-            navLinks.map( navLink => navLink.style.display = 'block')
-        }
-    }
+```javascript
     
+const location = useLocation()
 
-´´´
+useEffect(() => {
+
+    const path = (location.pathname === routes.home) ? routes.slash : location.pathname
+    
+    const navLinkSelected = document.getElementById( path )
+
+    if (!navLinkSelected) {
+        return
+    }
+
+    navLinkSelected.className = 'header__navlink header__navlink-selected'
+
+    return () => {
+        navLinkSelected.className = 'header__navlink'
+    }
+
+}, [location])
+
+
+const toggleLinks = (e) => {
+    const navLinks = [ ...document.getElementsByClassName('header__navlink') ]
+    
+    if ( e.target.className !== 'header__arrowDisplay' ) {
+        e.target.className = 'header__arrowDisplay'
+        navLinks.map( navLink => navLink.style.display = 'none')
+    } else {
+        e.target.className += ' header__arrowDisplay-clicked'
+        navLinks.map( navLink => navLink.style.display = 'block')
+    }
+}
+    
+```
 
 This code is for setting the class `.header__navlink-selected` and display it once we are at the correct page.
 For this is used the hooks `useEffect` and `useLocation` of react and react-router-dom.
@@ -108,16 +115,16 @@ If the path is not coincident with any navlink it just returns nothing.
 **Logic at MenuPage.js**
 
 ```javascript
-    const { width } = useWindowDimensions()
-    const [numPagesArray, setNumPagesArray] = useState(null);
-    
-    const onDocumentLoadSuccess = ({ numPages }) => {
-        const holdingArr = []
-        for (let i = 0; i < numPages; i++) {
-            holdingArr.push(i + 1)
-        }
-        setNumPagesArray(holdingArr);
+const { width } = useWindowDimensions()
+const [numPagesArray, setNumPagesArray] = useState(null);
+
+const onDocumentLoadSuccess = ({ numPages }) => {
+    const holdingArr = []
+    for (let i = 0; i < numPages; i++) {
+        holdingArr.push(i + 1)
     }
+    setNumPagesArray(holdingArr);
+}
 ```
 
 Using react-pdf as the documentation explains adding a loop to add all pages of the menu at the same time.
