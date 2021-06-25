@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Document, Page } from 'react-pdf';
 
-import file from '../../assets/sample.pdf'
+import { menuPdf } from '../../data/data';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 import { Layout } from '../templates/Layout'
 
@@ -17,14 +17,14 @@ export const MenuPage = () => {
         }
         setNumPagesArray(holdingArr);
     }
-    
+
     return (
         <Layout>
             <div className="menu">
                 <h1>Menu</h1>
                 <div>
                     <Document
-                        file={ file }
+                        file={ menuPdf }
                         onLoadSuccess={onDocumentLoadSuccess}
                     >
                         {
