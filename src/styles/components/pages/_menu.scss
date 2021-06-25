@@ -4,11 +4,16 @@
     flex-direction: column;
 
     & h1 {
-        margin: 20px 0;
+        margin: 30px 0;
     }
 
     & embed {
         height: 80vh;
         width: 90vw;
     }
+}
+
+.menu__page {
+    margin: 20px 0;
+
 }

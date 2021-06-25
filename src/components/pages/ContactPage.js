@@ -19,6 +19,7 @@ export const ContactPage = () => {
                         type="email"
                         name="email"
                         placeholder="Your email"
+                        autoComplete="off"
                     />
                     <input
                         className="contact__input"

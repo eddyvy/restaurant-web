@@ -33,6 +33,8 @@ npm run build
 
 - [Animate.css](https://animate.style/) - CDN imported in `./public/index.html`
 
+- [React-PDF](https://www.npmjs.com/package/react-pdf)
+
 
 ## Routes
 
@@ -54,7 +56,7 @@ npm run build
 
 ## Code explanation
 
-**Logic at the header**
+**Logic at Header.js**
 
 ´´´javascript
     const location = useLocation()
@@ -99,3 +101,26 @@ With useLocation the path of the page is gotten (and including condition to equa
 Every navlink has the path as id.
 If the path is not coincident with any navlink it just returns nothing.
 `toggleLinks` displays the navbar and hides it when it is in mobile view.
+
+
+**Logic at MenuPage.js**
+
+```javascript
+    const { width } = useWindowDimensions()
+    const [numPagesArray, setNumPagesArray] = useState(null);
+    
+    const onDocumentLoadSuccess = ({ numPages }) => {
+        const holdingArr = []
+        for (let i = 0; i < numPages; i++) {
+            holdingArr.push(i + 1)
+        }
+        setNumPagesArray(holdingArr);
+    }
+```
+
+Using react-pdf as the documentation explains adding a loop to add all pages of the menu at the same time.
+The loop is done thanks to useState and loading the number of pages.
+A hook to detect window size is added at `hooks/useWindowDimensions.js`.
+This hook returns the actual height and screen size through an event listener.
+The hook original code can be found [here](https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs).
+It is used to resize the PDF page of the menu.
