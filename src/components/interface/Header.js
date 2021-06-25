@@ -7,7 +7,7 @@ import { arrowDisplay, logo } from '../../data/data'
 
 export const Header = () => {
 
-    const navLinkInitialClassName = 'header__navlink animate__animated animate__slideInDown animate__faster'
+    const navLinkInitialClassName = 'header__navlink'
     const location = useLocation()
     
     useEffect(() => {

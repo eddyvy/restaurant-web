@@ -1,9 +1,12 @@
 import React from 'react'
 
+import { Layout } from '../../templates/Layout'
+
+
 export const Legal = () => {
     return (
-        <div>
+        <Layout>
             <h1>Legal Notice</h1>
-        </div>
+        </Layout>
     )
 }

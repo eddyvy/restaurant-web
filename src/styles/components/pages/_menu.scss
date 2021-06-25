@@ -1,0 +1,14 @@
+.menu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    & h1 {
+        margin: 20px 0;
+    }
+
+    & embed {
+        height: 80vh;
+        width: 90vw;
+    }
+}

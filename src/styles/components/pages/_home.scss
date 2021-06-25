@@ -1,0 +1,33 @@
+
+.home {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.home__title {
+    text-align: center;
+    margin: 10px 0;
+    & p {
+        margin: 10px 0;
+    }
+}
+
+.home__display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 10px 0;
+}
+
+@media (max-width: 1300px) {
+    .home__display {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .home__display {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
