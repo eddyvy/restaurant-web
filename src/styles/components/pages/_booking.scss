@@ -66,3 +66,13 @@
         padding-top: 2px;
     }
 }
+
+@media (max-width: 600px) {
+    .booking__form-item {
+        width: 300px;
+    }
+
+    .booking__form select {
+        width: 324px;
+    }
+}
