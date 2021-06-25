@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bc0b2f1e.chunk.css",
+    "main.js": "/static/js/main.9b958a71.chunk.js",
+    "main.js.map": "/static/js/main.9b958a71.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c295e747.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c295e747.js.map",
+    "static/js/2.a907a08a.chunk.js": "/static/js/2.a907a08a.chunk.js",
+    "static/js/2.a907a08a.chunk.js.map": "/static/js/2.a907a08a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.bc0b2f1e.chunk.css.map": "/static/css/main.bc0b2f1e.chunk.css.map",
+    "static/js/2.a907a08a.chunk.js.LICENSE.txt": "/static/js/2.a907a08a.chunk.js.LICENSE.txt",
+    "static/media/down-filled-triangular-arrow.d1b1f8a4.svg": "/static/media/down-filled-triangular-arrow.d1b1f8a4.svg",
+    "static/media/email.8053326d.svg": "/static/media/email.8053326d.svg",
+    "static/media/facebook.10dc8b73.svg": "/static/media/facebook.10dc8b73.svg",
+    "static/media/instagram.779f6f9b.svg": "/static/media/instagram.779f6f9b.svg",
+    "static/media/phone.ae74a6c5.svg": "/static/media/phone.ae74a6c5.svg",
+    "static/media/restaurant-logo.2d7ab414.svg": "/static/media/restaurant-logo.2d7ab414.svg",
+    "static/media/sample.c9bf32e7.pdf": "/static/media/sample.c9bf32e7.pdf",
+    "static/media/twitter.0f6d4bb7.svg": "/static/media/twitter.0f6d4bb7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c295e747.js",
+    "static/js/2.a907a08a.chunk.js",
+    "static/css/main.bc0b2f1e.chunk.css",
+    "static/js/main.9b958a71.chunk.js"
+  ]
+}
