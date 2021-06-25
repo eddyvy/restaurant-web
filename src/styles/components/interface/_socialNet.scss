@@ -1,0 +1,18 @@
+.socialNet {
+    margin: 10px 0;
+}
+
+.socialNet__link {
+    margin: 10px;
+    
+    & img {
+        filter: $filter6;
+        transition: 0.3s ease-in-out;
+        width: 35px;
+
+        &:hover {
+            filter: $filter3;
+        }
+
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { ContactBox } from '../interface/ContactBox'
 
 import { Layout } from '../templates/Layout'
 
@@ -40,6 +41,7 @@ export const ContactPage = () => {
                     </button>
                 </form>
             </div>
+            <ContactBox />
         </Layout>
     )
 }

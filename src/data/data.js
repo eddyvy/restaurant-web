@@ -1,6 +1,12 @@
 import logoSrc from '../assets/restaurant-logo.svg'
 import arrowDisplaySrc from '../assets/down-filled-triangular-arrow.svg'
 import menuPdfData from '../assets/sample.pdf'
+import phoneSrc from '../assets/phone.svg'
+import emailSrc from '../assets/email.svg'
+import facebookSrc from '../assets/facebook.svg'
+import instagramSrc from '../assets/instagram.svg'
+import twitterSrc from '../assets/twitter.svg'
+
 
 export const menuPdf = menuPdfData
 
@@ -68,4 +74,29 @@ export const homeImages = [
 export const aboutImg = {
     src: 'https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/06/25/15614775255199.jpg',
     alt: 'local of restaurant'
+}
+
+export const phoneIcon = {
+    src: phoneSrc,
+    alt: 'phone icon'
+}
+
+export const facebookIcon = {
+    src: facebookSrc,
+    alt: 'facebook icon'
+}
+
+export const twitterIcon = {
+    src: twitterSrc,
+    alt: 'twitter icon'
+}
+
+export const instagramIcon = {
+    src: instagramSrc,
+    alt: 'instagram icon'
+}
+
+export const emailIcon = {
+    src: emailSrc,
+    alt: 'email icon'
 }

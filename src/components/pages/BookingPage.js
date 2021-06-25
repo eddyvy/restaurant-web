@@ -13,10 +13,12 @@ export const BookingPage = () => {
         date: today,
         time: '12:30',
         name: '',
-        email: ''
+        email: '',
+        numberPeople: '2',
+        numberPhone: '',
     })
 
-    const { date, time, name, email } = formValues
+    const { date, time, name, email, numberPeople, numberPhone } = formValues
     
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -66,7 +68,25 @@ export const BookingPage = () => {
                         <option value="22:00">22:00</option>
                         <option value="22:30">22:30</option>
                     </select>
-                    <span className="booking__form-item">Name</span>
+                    <span className="booking__form-item">Number of people</span>
+                    <select
+                        className="booking__form-item"
+                        name="numberPeople"
+                        value={ numberPeople }
+                        onChange={ handleInputChange }
+                    >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <span className="booking__form-item">Your Name</span>
                     <input
                         className="booking__form-item"
                         type="text"
@@ -75,12 +95,21 @@ export const BookingPage = () => {
                         onChange={ handleInputChange }
                         autoComplete="off"
                     />
-                    <span className="booking__form-item">Email</span>
+                    <span className="booking__form-item">Your Email</span>
                     <input
                         className="booking__form-item"
                         type="email"
                         name="email"
                         value={ email }
+                        onChange={ handleInputChange }
+                        autoComplete="off"
+                    />
+                    <span className="booking__form-item">Your Phone Number</span>
+                    <input
+                        className="booking__form-item"
+                        type="text"
+                        name="numberPhone"
+                        value={ numberPhone }
                         onChange={ handleInputChange }
                         autoComplete="off"
                     />

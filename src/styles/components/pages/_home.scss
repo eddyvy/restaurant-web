@@ -20,6 +20,40 @@
     margin: 10px 0;
 }
 
+.home__button-container {
+    margin: 20px 0;
+}
+
+.home__button {
+    background-color: $color3;
+    border-radius: 40px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-top-color: $color2;
+    border-left-color: $color2;
+    border-right-color: $color4;
+    border-bottom-color: $color4;
+
+    color: $color1;
+    font-weight: bold;
+    height: 40px;
+    margin: 20px;
+    padding: 10px;
+    width: 100px;
+
+    transition: 0.1s ease-in-out;
+
+    &:focus {
+        outline: none;
+    }
+
+
+    &:hover {
+        color: $color1;
+    }
+}
+
 @media (max-width: 1300px) {
     .home__display {
         grid-template-columns: repeat(2, 1fr);

@@ -1,0 +1,18 @@
+.contactBox {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactBox__item {
+    margin: 10px 0;
+}
+
+.contactBox__item-link {
+    font-size: 2.2rem;
+    & img {
+        filter: $filter3;
+        padding-right: 10px;
+        width: 30px;
+    }
+}

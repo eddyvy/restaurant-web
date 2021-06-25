@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { homeImages } from '../../data/data'
 
@@ -22,6 +23,10 @@ export const HomePage = () => {
                             homeImages.map( ({ src, alt, title, body }) => (<ImageCard key={ src } src={ src } alt={ alt } title={ title } body={ body } />))
                         )
                     }
+                </div>
+                <div className="home__button-container">
+                    <Link className="home__button" to="/booking" >Book now!</Link>
+                    <Link className="home__button" to="/order" >Order now!</Link>
                 </div>
             </div>
         </Layout>

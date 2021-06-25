@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { routes } from '../../router/routes'
 import { logo } from '../../data/data'
+import { SocialNet } from './SocialNet'
 
 
 export const Footer = () => (
@@ -11,6 +12,7 @@ export const Footer = () => (
         <div className="footer__brand">
             <h5>Resto Restaurant</h5>
             <p>The best restaurant you can choose !</p>
+            <SocialNet />
         </div>
         <div className="footer__legal">
             <Link className="footer__legal-link" to={ routes.privacy } >Privacy Policy</Link>
